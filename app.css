@@ -1,0 +1,30 @@
+.bs-grid { align-items: start; }
+.mini-c { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--text-3); cursor: pointer; }
+.mini-c input[type="color"] { width: 34px; height: 30px; padding: 2px; border-radius: 8px; }
+.stage { height: 300px; border-radius: 16px; display: grid; place-items: center; border: 1px solid var(--line); transition: background var(--dur); overflow: hidden; }
+.box { width: 52%; aspect-ratio: 1.35; display: grid; align-content: center; justify-items: center; gap: 2px; transition: background var(--dur), color var(--dur); }
+.box b { font-size: 17px; }
+.box span { font-size: 12.5px; opacity: .6; }
+#css { margin: 0; }
+.lbl { font-size: 12.5px; font-weight: 600; color: var(--text-2); }
+
+.layers { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; max-height: 214px; overflow: auto; }
+.layer { display: flex; align-items: center; gap: 4px; border-radius: 11px; background: var(--surface-2); border: 1px solid var(--line); padding: 3px 4px 3px 3px; }
+.layer.on { border-color: var(--accent); background: var(--accent-soft); }
+.layer .pick { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; padding: 6px 8px; text-align: left; font-size: 12.5px; color: var(--text); }
+.layer .pick .mono { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.layer .sw { width: 18px; height: 18px; border-radius: 5px; flex: none; border: 1px solid var(--line-strong); }
+.x { width: 28px; height: 28px; border-radius: 7px; color: var(--text-3); font-size: 15px; flex: none; }
+.x:hover:not(:disabled) { color: var(--text); background: var(--surface-3); }
+.x:disabled { opacity: .3; }
+.ctl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; padding: 12px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--line); }
+.ctl .v { font-family: var(--mono); color: var(--text); font-weight: 600; }
+.color-row { grid-column: 1 / -1; align-items: flex-end; }
+@media (max-width: 420px) { .ctl { grid-template-columns: 1fr; } }
+
+.presets { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 520px) { .presets { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.preset { display: grid; place-items: center; gap: 6px; padding: 14px 4px 6px; border-radius: 12px; border: 1px solid var(--line); transition: transform 140ms var(--ease); }
+.preset:hover { transform: translateY(-2px); }
+.preset .pv { width: 38px; height: 28px; border-radius: 7px; }
+.preset .pn { font-size: 11px; font-weight: 650; }

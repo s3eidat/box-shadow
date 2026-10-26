@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Box Shadow — Free Layered CSS Box-Shadow Generator | S3eidat Tools</title>
+<meta name="description" content="Design layered CSS box-shadows with a live preview on light or dark backgrounds. Offset, blur, spread, color, opacity and inset per layer, presets including soft, elevated and neumorphic. Free and private.">
+<meta property="og:title" content="Box Shadow — layered box-shadow generator">
+<meta property="og:description" content="Multi-layer CSS shadows with live preview and presets. Runs in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="box-shadow">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Box Shadow</h1>
+    <p>Stack shadow layers, tune each one, and see it live on a light or dark page. Start from a preset, then copy the CSS.</p>
+  </section>
+
+  <div class="grid-2 bs-grid">
+    <section class="card stack">
+      <div class="row between">
+        <div class="seg" id="bg" role="group" aria-label="Preview background">
+          <button aria-pressed="true" data-v="light">Light</button>
+          <button aria-pressed="false" data-v="dark">Dark</button>
+          <button aria-pressed="false" data-v="custom">Custom</button>
+        </div>
+        <div class="row">
+          <label class="mini-c" title="Page color"><span>Page</span><input type="color" id="page-c" aria-label="Page color"></label>
+          <label class="mini-c" title="Box color"><span>Box</span><input type="color" id="box-c" aria-label="Box color"></label>
+        </div>
+      </div>
+      <div class="stage" id="stage"><div class="box" id="box"><b>Card</b><span>Your content</span></div></div>
+      <label class="field"><span class="row between"><span>Corner radius</span><span class="faint" id="radius-v"></span></span>
+        <input type="range" id="radius" min="0" max="80">
+      </label>
+      <div class="row between">
+        <h2>CSS</h2>
+        <button class="btn small primary" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy CSS</button>
+      </div>
+      <pre class="out" id="css" tabindex="0"></pre>
+    </section>
+
+    <section class="card stack">
+      <div class="row between">
+        <h2>Layers</h2>
+        <div class="row">
+          <button class="btn small" id="add"><svg class="i"><use href="#i-plus"/></svg>Add</button>
+          <button class="btn small ghost" id="dup">Duplicate</button>
+        </div>
+      </div>
+      <ol class="layers" id="layers"></ol>
+
+      <div class="ctl" id="ctl">
+        <label class="field"><span class="row between"><span>Offset X</span><span class="v" data-v="x"></span></span><input type="range" data-k="x" min="-100" max="100"></label>
+        <label class="field"><span class="row between"><span>Offset Y</span><span class="v" data-v="y"></span></span><input type="range" data-k="y" min="-100" max="100"></label>
+        <label class="field"><span class="row between"><span>Blur</span><span class="v" data-v="blur"></span></span><input type="range" data-k="blur" min="0" max="200"></label>
+        <label class="field"><span class="row between"><span>Spread</span><span class="v" data-v="spread"></span></span><input type="range" data-k="spread" min="-100" max="100"></label>
+        <div class="row color-row">
+          <input type="color" id="l-color" aria-label="Shadow color">
+          <label class="field grow"><span class="row between"><span>Opacity</span><span class="v" data-v="alpha"></span></span><input type="range" data-k="alpha" min="0" max="100"></label>
+          <label class="check"><input type="checkbox" id="l-inset"> Inset</label>
+        </div>
+      </div>
+
+      <div>
+        <span class="lbl">Presets</span>
+        <div class="presets mt" id="presets"></div>
+      </div>
+      <label class="field">Paste a box-shadow to edit it
+        <input class="input mono" id="import" spellcheck="false" autocomplete="off" dir="ltr" placeholder="0 4px 12px rgba(0,0,0,.15), inset 0 1px 0 #fff">
+      </label>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
